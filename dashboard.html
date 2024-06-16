@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: url('asset/bgdashboard.jpg');
+            background-size: cover;
+        }
+
+        .container {
+            position: relative;
+            height: 100%;
+        }
+
+        .profile {
+            position: absolute;
+            z-index: 3;
+            top: 50%; 
+            left: 20%; 
+            transform: translate(-50%, -50%); 
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .dashboard {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            background-color: #ffee02;
+            z-index: 2; 
+        }
+
+        .button-container {
+            position: absolute;
+            z-index: 3;
+            bottom: 230px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .button-container div {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .button-container button {
+            padding: 3px 80px;
+            font-size: 15px;
+            border-radius: 10px;
+            background-color: #ffee02;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #000000;
+            font-size:20px;
+            text-align: left;
+            width: 100%; 
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 15px;
+        }
+        .welcome-container {
+            position: absolute;
+            top: 150px;
+            left: 85%;
+            transform: translateX(-50%);
+            z-index: 3;
+            text-align: left;
+            width: 100%;
+        }
+        
+        #welcome-text {
+            font-size: 40px;
+            color: #ffffff;
+        }
+        h2 {
+            color: #ffffff;
+            font-size:15px;
+            text-align: left;
+            text-align: justify;
+            width: 100%; 
+            font-family:Arial, Helvetica, sans-serif;
+            position: absolute;
+            top: 100px;
+            left: 2px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <h1> DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL BANGKALAN </h1>
+        </div>
+    
+        <div class="profile">
+            <img src="asset/logoprofile.png" class="rounded" alt="profile" width="410" height="410">
+        </div>
+        <div class="overlay"></div>
+        <div class="button-container" id="button-container">
+        </div>
+        <div class="welcome-container" id="welcome-container">
+            <p id="welcome-text">Selamat Datang !</p>
+            <h2>Dinas Kependudukan dan Pencatatan Sipil (Dispenduk Capil) merupakan sebuah <br>lembaga pemerintah yang bertanggung jawab atas berbagai aspek terkait kependudukan <br> dan pencatatan sipil di suatu wilayah administratif. Tugas utamanya meliputi pencatatan <br>kejadian penting seperti kelahiran, kematian, pernikahan, dan perceraian untuk menciptakan<br> catatan resmi yang sah.<br> <br><br>Selain itu, Dispenduk Capil juga bertugas mendaftarkan penduduk yang tinggal di wilayahnya <br>serta mengeluarkan dokumen kependudukan seperti kartu identitas, akta kelahiran, dan akta kematian.<br> Melalui pelayanan yang diberikan, lembaga ini tidak hanya memfasilitasi kebutuhan<br> administratif masyarakat, tetapi juga mendukung pelaksanaan program pembangunan <br>yang bertujuan meningkatkan kesejahteraan masyarakat secara keseluruhan. </h2>
+        </div>
+    </div> 
+    
+    <script>
+        function addButton(text, link) {
+            var buttonContainer = document.getElementById('button-container');
+            var button = document.createElement('button');
+            button.innerHTML = text;
+            button.onclick = function() {
+                window.location.href = link;
+            };
+            buttonContainer.appendChild(button);
+        }
+    
+        addButton('Pegawai', 'admin.php');
+        addButton('Warga', 'form.php'); // Anda mungkin ingin mengganti ini dengan link yang sesuai
+    </script>
+    
